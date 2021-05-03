@@ -11,6 +11,13 @@ const tutorials = [
   'what is JSONP?'
 ];
 
-const titleCased = () => {
-  return tutorials
-}
+const titleCased = function () {
+  let modifiedArray=tutorials.map(function(tutorial){
+     let separatedArray=tutorial.split(" ");
+//Array of words like ["What , "is" , "JSONP"]
+       let result=separatedArray.map(function(word){
+            return word.charAt(0).toUpperCase()+word.substring(1);
+          });
+        return result.join(" ");
+      });
+    return modifiedArray};
